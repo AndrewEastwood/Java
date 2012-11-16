@@ -4,8 +4,6 @@ import java.text.Collator;
 import java.text.CollationKey;
 import java.util.Locale;
 
-import sun.misc.Compare;
-
 public class NewSorter {
 
 	public static interface Comparer {
