@@ -116,7 +116,7 @@ public class NewSorter {
 
 		} while (i <= j);
 
-		// sort te rests
+		// sort the rests
 		if (from < j)
 			sort(a, b, from, j, up, c);
 		if (i < to)
