@@ -2,12 +2,20 @@ package trainings.custom;
 
 //import java.util.logging.Logger;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+
 import org.apache.log4j.Logger;
 
 
 public class Primitives {
 
 	static Logger log = Logger.getLogger(Primitives.class.getName());
+	//private static final int abcFinal;
+	
+	/*static {
+		abcFinal = 4;
+	}*/
 
 	/**
 	 * @param args
@@ -63,7 +71,18 @@ public class Primitives {
 		CustomObjectOne cstOne = CustomObjectOne.getInstance();
 		transformCustomObj(cstOne);
 		System.out.println(cstOne);
+		
+		// test final variable
+		// can't set abcFinal
+		
+		CustomObjectTwo cstTwo = CustomObjectTwo.getInstance();
+		transformCustomObj(cstTwo);
+		System.out.println(cstTwo);
 
+		// print hash code
+		System.out.println(cstOne.hashCode());
+		System.out.println(cstTwo.hashCode());
+	
 	}
 
 	// passing by value

@@ -1,6 +1,6 @@
 package trainings.custom;
 
-public class CustomObjectOne implements ICustomObject {
+public class CustomObjectTwo implements ICustomObject  {
 
 	private String objectName = "";
 	
@@ -12,25 +12,25 @@ public class CustomObjectOne implements ICustomObject {
 		this.objectName = objectName;
 	}
 
-	private static CustomObjectOne _inst;
+	private static CustomObjectTwo _inst;
 	
 	static {
-		System.out.println("[CustomObjectOne] Static Init Running;");
+		System.out.println("[CustomObjectTwo] Static Init Running;");
 		_inst = null;
 	}
 	
 	{
-		System.out.println("[CustomObjectOne] Public Init Running;");
+		System.out.println("[CustomObjectTwo] Public Init Running;");
 	}
 	
-	private CustomObjectOne () {
-		System.out.println("[CustomObjectOne] Constructor Running;");
+	private CustomObjectTwo () {
+		System.out.println("[CustomObjectTwo] Constructor Running;");
 	}
 	
-	public static CustomObjectOne getInstance() {
-		System.out.println("[CustomObjectOne] getInstance() Running;");
+	public static CustomObjectTwo getInstance() {
+		System.out.println("[CustomObjectTwo] getInstance() Running;");
 		if (_inst == null)
-			_inst = new CustomObjectOne();
+			_inst = new CustomObjectTwo();
 		
 		return _inst;
 	}
@@ -58,7 +58,7 @@ public class CustomObjectOne implements ICustomObject {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CustomObjectOne other = (CustomObjectOne) obj;
+		CustomObjectTwo other = (CustomObjectTwo) obj;
 		if (objectName == null) {
 			if (other.objectName != null)
 				return false;
@@ -66,7 +66,5 @@ public class CustomObjectOne implements ICustomObject {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }
