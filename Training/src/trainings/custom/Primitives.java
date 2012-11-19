@@ -4,6 +4,7 @@ package trainings.custom;
 
 import org.apache.log4j.Logger;
 
+
 public class Primitives {
 
 	static Logger log = Logger.getLogger(Primitives.class.getName());
@@ -37,6 +38,13 @@ public class Primitives {
 
 		B = B.toUpperCase();
 
+		A = A + A + A + B + A;
+
+		
+		//char[] c = A.toCharArray();
+		//c[4] = 'X';
+		//A = new StringBuilder().append(c).toString();
+		
 		// Logger lg = Logger.getLogger("A");
 		// lg.info("works");
 
@@ -45,12 +53,57 @@ public class Primitives {
 
 		System.out.println(A);
 		System.out.println(B);
+		
+		Primitives.CustomObj cObj1 = Primitives.CustomObj.getInstance();
+		
+		transformCustomObj(cObj1);
+		System.out.println(cObj1);
+		
+		// custom object one
+		CustomObjectOne cstOne = CustomObjectOne.getInstance();
+		transformCustomObj(cstOne);
+		System.out.println(cstOne);
 
 	}
 
-	// passing by references
+	// passing by value
 	public static void transformStr(String s) {
 		s = "asdfghjkl" + s;
+	}
+
+	// passing by reference
+	public static void transformCustomObj(ICustomObject s) {
+		s.setObjectName("TESTING");
+	}
+	
+	// making custom object
+	public static class CustomObj implements ICustomObject {
+		private String objectName = "";
+		private static CustomObj _inst = null;
+		
+		private CustomObj () {
+			System.out.println("private constructor of CustomObj called");
+		}
+		
+		public static CustomObj getInstance () {
+			System.out.println("getInstance() of CustomObj called");
+			if (_inst == null)
+				_inst = new CustomObj();
+			return _inst;
+		}
+		
+		public String getObjectName() {
+			return objectName;
+		}
+
+		public void setObjectName(String objectName) {
+			this.objectName = objectName;
+		}
+
+		@Override
+		public String toString() {
+			return "CustomObj [name=" + objectName + "]";
+		}
 	}
 
 }
