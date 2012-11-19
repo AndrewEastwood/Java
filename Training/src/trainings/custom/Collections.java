@@ -2,6 +2,7 @@ package trainings.custom;
 
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Vector;
 
 public class Collections {
 
@@ -25,14 +26,13 @@ public class Collections {
 		Hashtable<ICustomObject, String> customHT = new Hashtable<ICustomObject, String>();
 		
 		customHT.put(cstOne, "aaa");
-		customHT.put(cstTwo, null);
+		customHT.put(cstTwo, "ccc");
 		customHT.put(cstThree, "333");
 
 		String secondObjValue2 = customHT.get(cstTwo);
 		System.out.println("The value of the second custom object is = " + secondObjValue2);
 		
 		// ----------- Map;
-		
 		
 		
 	}
