@@ -93,11 +93,13 @@ public class IteratorHashtableTest {
 			}
 		};
 		concurrHM.putAll(m1);
+		concurrHM.put(9, "NINE");
 		for (Iterator<String> iterator = concurrHM.values().iterator(); iterator
 				.hasNext();)
 			System.out.println("[test 4] Updated ConcurrentHashMap value = "
 					+ iterator.next());
 
+		//-----------------------------------------------------------------//
 		// ArrayList Test
 		ArrayList<String> arrListTwo = new ArrayList<String>() {
 			{
@@ -115,11 +117,14 @@ public class IteratorHashtableTest {
 		});
 		// Modify some
 		arrListTwo.set(4, arrListTwo.get(4) + " (Modified at Index 4)");
+		for (int i=0;i<5;i++)
+			arrListTwo.add("Random value = " + (int)(100*Math.random()));
 		// ---print all items from ArrayList
 		for (int i = 0; i < arrListTwo.size(); i++)
 			System.out.println("[test 5] ArrayList value is: "
 					+ arrListTwo.get(i) + " at index " + i);
 
+		//-----------------------------------------------------------------//
 		// Linked List tests
 		LinkedList<Map.Entry<String, String>> linkListTwo = new LinkedList<Map.Entry<String, String>>();
 		
@@ -154,12 +159,49 @@ public class IteratorHashtableTest {
 			}
 		};
 		linkListTwo.addAll(hashMapAppendToLinkList.entrySet());
-		
+
+		// modifications
+		linkListTwo.add(3, linkListTwo.get(1));
+		IteratorHashtableTest.MyCustomEntryOne custEntOne = (new IteratorHashtableTest()).new MyCustomEntryOne("SomeKey", "value");
+		for (int i = 0; i< 5;i++)
+			linkListTwo.add(custEntOne);
 		// print all values from LinkedList
 		Iterator<Map.Entry<String, String>> linkListTwoIterator = linkListTwo.iterator();
 		for(;linkListTwoIterator.hasNext();){
 			Map.Entry<String, String> curr = linkListTwoIterator.next();
 			System.out.println("[test 6] LinkedList value is Entry<" + curr.getKey() + ", " + curr.getValue() + ">");
+		}
+		
+
+	}
+	
+	public class MyCustomEntryOne implements Map.Entry<String, String> {
+
+		private final String key;
+		private String value;
+
+		public MyCustomEntryOne (String key, String value) {
+			this.key = key;
+			this.value = value;
+		}
+		
+		@Override
+		public String getKey() {
+			// TODO Auto-generated method stub
+			return key;
+		}
+
+		@Override
+		public String getValue() {
+			// TODO Auto-generated method stub
+			return value;
+		}
+
+		@Override
+		public String setValue(String value) {
+			// TODO Auto-generated method stub
+			this.value = value;
+			return value;
 		}
 
 	}
