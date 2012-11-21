@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%L: %-5p %c{1} - %m%n" />
+			<!-- <param name="ConversionPattern" value="%-6r [%15.15t] %-5p %30.30c 
+				%x - %m%n" /> -->
+		</layout>
+	</appender>
+
+	<appender name="classDebugger" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/mydata/GitHub/Java/Training/logs/debugger.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- <param name="ConversionPattern" value="%r [%t] %-5p %c - %m%n%l%n" 
+				/> -->
+			<!-- <param name="ConversionPattern" value="%c%n%p%n" /> -->
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="TRACE" />
+			<param name="levelMax" value="INFO" />
+		</filter>
+	</appender>
+
+	<logger name="trainings.networking.GetURL">
+		<param name="level" value="DEBUG" />
+		<appender-ref ref="classDebugger" />
+	</logger>
+
+	<root>
+		<priority value="DEBUG" />
+		<appender-ref ref="console" />
+	</root>
+
+</log4j:configuration>
