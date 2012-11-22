@@ -1,20 +1,52 @@
-Application Startup
-Application End
-Application Startup
-Application End
-Application Startup
-Application End
-Application Startup
-Application End
-Application Startup
-Application End
-Application Startup
-Application End
-Application Startup
-Application End
-Application Startup
-Application End
-Application Startup
-Application End
-Application Startup
-Application End
+Attempt to connect
+Connected to http://www.google.com/
+Content type: text/html; charset=windows-1251
+Length: -1
+Encoding: null
+Last Modified: Thu Jan 01 03:00:00 EET 1970
+--------------------------------------
+Attempt to connect
+Connected to http://www.google.com/
+Content type: text/html; charset=windows-1251
+Length: -1
+Encoding: null
+Last Modified: Thu Jan 01 03:00:00 EET 1970
+Request: GET
+responce: 200
+--------------------------------------
+Attempt to connect
+Connected to http://www.google.com.ua/
+Content type: text/html; charset=windows-1251
+Length: -1
+Encoding: null
+Last Modified: Thu Jan 01 03:00:00 EET 1970
+Request: GET
+responce: 200
+--------------------------------------
+Attempt to connect
+Connected to http://www.ccc.com.ua/
+Content type: text/html; charset=utf-8
+Length: -1
+Encoding: null
+Last Modified: Wed Nov 21 23:19:24 EET 2012
+Request: GET
+responce: 200
+--------------------------------------
+Attempt to connect
+Connected to http://google.com.ua/
+Content type: text/html; charset=windows-1251
+Length: -1
+Encoding: null
+Last Modified: Thu Jan 01 03:00:00 EET 1970
+Request: GET
+responce: 200
+--------------------------------------
+Attempt to connect
+Connected to http://narod.yandex.ru/
+Content type: text/html; charset=utf-8
+Length: -1
+Encoding: null
+Last Modified: Thu Jan 01 03:00:00 EET 1970
+Request: GET
+responce: 200
+--------------------------------------

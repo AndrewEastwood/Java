@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
+<!-- 
+
+General:
+
+TRACE < DEBUG < INFO < WARN < ERROR < FATAL
+
+so, if we set log-level with INFO we'll get 
+all messages that goes after INFO including INFO itself:
+they're:  INFO, WARN, ERROR and FATAL
+
+ -->
+
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
 	<appender name="console" class="org.apache.log4j.ConsoleAppender">
@@ -10,17 +22,29 @@
 			<!-- <param name="ConversionPattern" value="%-6r [%15.15t] %-5p %30.30c 
 				%x - %m%n" /> -->
 		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="INFO" />
+		</filter>
+		<!-- trololo
+			now it goes on this way:
+			console prints:
+			WARN & ERROR & FATAL
+		-->
 	</appender>
 
 	<appender name="classDebugger" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="/mydata/GitHub/Java/Training/logs/debugger.log" />
+		<param name="File" value="logs/debugger.log" />
+		<!-- <param name="append" value="false" /> -->
 		<layout class="org.apache.log4j.PatternLayout">
 			<!-- <param name="ConversionPattern" value="%r [%t] %-5p %c - %m%n%l%n" 
 				/> -->
-			<!-- <param name="ConversionPattern" value="%c%n%p%n" /> -->
+			<param name="ConversionPattern" value="%m%n" />
 		</layout>
+		<!-- 
+			start level is: ALL (because of logger trainings.networking.GetURLInfo)
+			logs all levels up to INFO (include INFO as well)
+		-->
 		<filter class="org.apache.log4j.varia.LevelRangeFilter">
-			<param name="levelMin" value="TRACE" />
 			<param name="levelMax" value="INFO" />
 		</filter>
 	</appender>
@@ -30,8 +54,20 @@
 		<appender-ref ref="classDebugger" />
 	</logger>
 
+	<!-- the GetURLInfo logs into the file as well + root
+		but: we've overridden root's log level with ALL  
+	  -->
+	<logger name="trainings.networking.GetURLInfo">
+		<!-- we allow logging all levels -->
+		<param name="level" value="ALL" />
+		<!-- append one more logger type: so now we have root's console and classDebugger -->
+		<appender-ref ref="classDebugger" />
+	</logger>
+
 	<root>
-		<priority value="DEBUG" />
+		<!-- by default we log all messages that goes after with DEBUG -->
+		<param name="level" value="DEBUG" />
+		<!-- by default we send all messages into console -->
 		<appender-ref ref="console" />
 	</root>
 
