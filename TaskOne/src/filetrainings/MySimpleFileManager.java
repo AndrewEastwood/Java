@@ -1,4 +1,4 @@
-package files;
+package filetrainings;
 
 import java.io.BufferedReader;
 import java.io.File;
