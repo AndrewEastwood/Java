@@ -120,7 +120,7 @@ public class CustomTwo {
 
 		// testIoSeven();
 		// testIoEight();
-		testIoTen();
+		testIoSeven();
 
 	}
 
