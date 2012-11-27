@@ -1,58 +1,97 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mpws.root</groupId>
-    <artifactId>mavenTrainings</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	<groupId>com.mpws.root</groupId>
+	<artifactId>mavenTrainings</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-    <modules>
-        <module>dbo</module>
-        <module>manager</module>
-    </modules>
+	<modules>
+		<module>dbo</module>
+		<module>manager</module>
+	</modules>
 
-    <dependencyManagement>
-    	<dependencies>
-    		<dependency>
-    			<groupId>org.apache.logging.log4j</groupId>
-    			<artifactId>log4j-api</artifactId>
-    			<version>2.0-alpha2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.apache.logging.log4j</groupId>
-    			<artifactId>slf4j-impl</artifactId>
-    			<version>2.0-alpha2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>org.apache.maven.surefire</groupId>
-    			<artifactId>surefire-junit3</artifactId>
-    			<version>2.7.2</version>
-    		</dependency>
-    		<dependency>
-    			<groupId>com.mpws</groupId>
-    			<artifactId>dbo</artifactId>
-    			<version>0.0.1-SNAPSHOT</version>
-    		</dependency>
-    	</dependencies>
-    </dependencyManagement>
-    
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>2.0-alpha2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>slf4j-impl</artifactId>
+				<version>2.0-alpha2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.maven.surefire</groupId>
+				<artifactId>surefire-junit3</artifactId>
+				<version>2.7.2</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mpws</groupId>
+				<artifactId>dbo</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mpws</groupId>
+				<artifactId>manager</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
+				<version>2.3.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>com.mpws.manager.App</mainClass>
+						</manifest>
+						<manifestEntries>
+							<innerDemo>false</innerDemo>
+							<mpwsRelease>1.0</mpwsRelease>
+							<Class-Path>../conf/</Class-Path>
+						</manifestEntries>
+					</archive>
+				</configuration>
+				<!-- <executions> <execution> <id>make-jar-client</id> <phase>initialize</phase> 
+					<goals> <goal>jar</goal> </goals> <configuration> <classifier>manager</classifier> 
+					<archive> <manifest> <addClasspath>true</addClasspath> <mainClass>App</mainClass> 
+					</manifest> <manifestEntries> <innerDemo>false</innerDemo> <mpwsRelease>1.0</mpwsRelease> 
+					</manifestEntries> </archive> </configuration> </execution> <execution> <id>make-jar-dbo</id> 
+					<phase>initialize</phase> <goals> <goal>jar</goal> </goals> <configuration> 
+					<classifier>dbo</classifier> <archive> <manifest> <addClasspath>true</addClasspath> 
+					<mainClass>App</mainClass> </manifest> </archive> </configuration> </execution> 
+					</executions> -->
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.1</version>
 				<executions>
 					<execution>
-						<phase>initialize</phase>
+						<id>echodir</id>
 						<goals>
-							<goal>jar</goal>
+							<goal>run</goal>
 						</goals>
+						<phase>verify</phase>
+						<inherited>false</inherited>
+						<configuration>
+							<tasks>
+								<echo>Build Dir TROLOLO: ${project.build.directory}</echo>
+							</tasks>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

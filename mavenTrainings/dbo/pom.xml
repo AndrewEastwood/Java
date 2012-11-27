@@ -27,4 +27,33 @@
 		</dependency>
 	</dependencies>
 
+
+<!-- 	<profiles>
+		<profile>
+			<id>run-dbo</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>execTestOne</id>
+								<phase>test</phase>
+								<goals>
+									<goal>java</goal>
+								</goals>
+								<inherited>false</inherited>
+								<configuration>
+									<executable>java</executable>
+									<mainClass>com.mpws.dbo.App</mainClass>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles> -->
+
 </project>
