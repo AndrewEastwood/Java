@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	id="WebApp_ID" version="2.5">
-	<display-name>hyfg</display-name>
-	<welcome-file-list>
-		<welcome-file>/pages/index.html</welcome-file>
-		<welcome-file>/pages/index.htm</welcome-file>
-		<welcome-file>/pages/index.jsp</welcome-file>
-		<welcome-file>/pages/default.html</welcome-file>
-		<welcome-file>/pages/default.htm</welcome-file>
-		<welcome-file>/pages/default.jsp</welcome-file>
-	</welcome-file-list>
-	<servlet>
-		<description></description>
-		<display-name>CoffeFormHandler</display-name>
-		<servlet-name>CoffeFormHandler</servlet-name>
-		<servlet-class>com.demo.CoffeFormHandler</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>CoffeFormHandler</servlet-name>
-		<url-pattern>/coffe-form-answer.do</url-pattern>
-	</servlet-mapping>
-	
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>webProjectOne</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CoffeFormHandler</display-name>
+    <servlet-name>CoffeFormHandler</servlet-name>
+    <servlet-class>com.demo.CoffeFormHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CoffeFormHandler</servlet-name>
+    <url-pattern>/coffe-form-answer.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StaticResourceHandler</display-name>
+    <servlet-name>StaticResourceHandler</servlet-name>
+    <servlet-class>com.demo.StaticResourceHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StaticResourceHandler</servlet-name>
+    <url-pattern>/static/style.css</url-pattern>
+  </servlet-mapping>
 </web-app>

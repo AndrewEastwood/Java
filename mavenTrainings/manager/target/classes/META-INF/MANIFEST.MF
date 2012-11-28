@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: admin1
+Build-Jdk: 1.6.0_24
+Class-Path: ../conf/ log4j-api-2.0-alpha2.jar
+Main-Class: com.mpws.manager.App
+Created-By: Maven Integration for Eclipse
+innerDemo: false
+mpwsRelease: 1.0
+

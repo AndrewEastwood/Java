@@ -1,5 +1,8 @@
 <html>
+<head>
 <title>Coffee Advisor></title>
+<link href="static/style.css" type="text/css" rel="stylesheet"/>
+</head>
 <body>
   <h1 align="center">Coffee Advisor </h1>
   <form method="POST" action="coffe-form-answer.do">
@@ -16,6 +19,6 @@
       <input type="Submit">
     </center>
    </form>
-	<a href="/">Home</a>
+	<a href="<%=application.getContextPath()%>">Home</a>
 </body>
 <html>

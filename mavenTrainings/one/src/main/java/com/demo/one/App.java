@@ -1,6 +1,6 @@
 package com.demo.one;
 
-import org.eclipse.jetty.server.Server;
+//import org.eclipse.jetty.server.Server;
 
 
 /**
@@ -14,10 +14,10 @@ public class App
         System.out.println( "Hello World!" );
         //org.apache.log4j.Logger.getRootLogger().info("TROLOLOLOLO");
         
-        Server srv = new Server(8089);
+        /*Server srv = new Server(8089);
         srv.setHandler(new HelloHandler());
         srv.start();
-        srv.join();
+        srv.join();     */
         
         
     }

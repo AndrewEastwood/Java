@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/manager/src/main/Main.iml" filepath="$PROJECT_DIR$/manager/src/main/Main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dbo/src/main/Main1.iml" filepath="$PROJECT_DIR$/dbo/src/main/Main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/one/src/main/Main2.iml" filepath="$PROJECT_DIR$/one/src/main/Main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/one/src/test/Test.iml" filepath="$PROJECT_DIR$/one/src/test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dbo/dbo.iml" filepath="$PROJECT_DIR$/dbo/dbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manager/manager.iml" filepath="$PROJECT_DIR$/manager/manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mavenTrainings.iml" filepath="$PROJECT_DIR$/mavenTrainings.iml" />
+    </modules>
+  </component>
+</project>
+
