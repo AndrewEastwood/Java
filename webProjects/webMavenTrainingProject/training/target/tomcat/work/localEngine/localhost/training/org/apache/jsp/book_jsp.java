@@ -4,18 +4,12 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class book_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List _jspx_dependants;
-
-  static {
-    _jspx_dependants = new java.util.ArrayList(2);
-    _jspx_dependants.add("/menu-top.jsp");
-    _jspx_dependants.add("/content.jsp");
-  }
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -46,7 +40,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 
     try {
-      response.setContentType("text/html; charset=UTF-8");
+      response.setContentType("text/html;charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -57,42 +51,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
-      out.write("<html>\n");
-      out.write("<body>\n");
-      out.write("\n");
-      out.write("<div class=\"menu\">\n");
-      out.write("\n");
-      out.write("<div>\n");
-      out.write("\n");
-      out.write("<ul>\n");
-      out.write("<li><a href=\"index.jsp?menu=index\">Home</a></li>\n");
-      out.write("<li><a href=\"index.jsp?menu=book\">Guest Book</a></li>\n");
-      out.write("</ul>\n");
-      out.write("\n");
-      out.write("</div>");
-      out.write("\n");
-      out.write("</div>\n");
-      out.write("<div class=\"content\">\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<h3>");
-      out.print( request.getParameter("menu") );
-      out.write("</h3>\n");
-      out.write("<h5>Current time: ");
-      out.print( new java.util.Date() );
-      out.write("</h5>\n");
-      out.write("\n");
-      out.write("<p>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("</p>");
-      out.write("\n");
-      out.write("</div>\n");
-      out.write("\n");
-      out.write("</body>\n");
-      out.write("</html>");
+      out.write("book");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
