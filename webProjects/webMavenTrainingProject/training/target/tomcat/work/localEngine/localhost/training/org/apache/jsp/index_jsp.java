@@ -3,10 +3,12 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.util.*;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
+ long dt = new Date().getTime(); 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List _jspx_dependants;
@@ -57,6 +59,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
       out.write("<html>\n");
       out.write("<body>\n");
@@ -90,6 +95,33 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</p>");
       out.write("\n");
       out.write("</div>\n");
+      out.write("\n");
+      out.write('\n');
+      out.write('\n');
+
+ResourceBundle resource = ResourceBundle.getBundle("/properties/demo");
+System.out.println(resource.getString("welcome"));
+
+
+      out.write('\n');
+      out.write('\n');
+      com.trainig.commons.SimpleBean SimpleBean = null;
+      synchronized (_jspx_page_context) {
+        SimpleBean = (com.trainig.commons.SimpleBean) _jspx_page_context.getAttribute("SimpleBean", PageContext.PAGE_SCOPE);
+        if (SimpleBean == null){
+          SimpleBean = new com.trainig.commons.SimpleBean();
+          _jspx_page_context.setAttribute("SimpleBean", SimpleBean, PageContext.PAGE_SCOPE);
+        }
+      }
+      out.write('\n');
+      org.apache.jasper.runtime.JspRuntimeLibrary.introspecthelper(_jspx_page_context.findAttribute("SimpleBean"), "message", "demo", null, null, false);
+      out.write("\n");
+      out.write("<H1>Message: <I>");
+      out.print(dt);
+      out.write('\n');
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((com.trainig.commons.SimpleBean)_jspx_page_context.findAttribute("SimpleBean")).getMessage())));
+      out.write("\n");
+      out.write("</I></H1>\n");
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>");
